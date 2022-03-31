@@ -9,7 +9,7 @@
   },
   "node": {
     "site_length": 20,
-    "dir": "../Assets/img/",
+    "dir": "https://sakv2e10204.github.io/Telecom-Infra-Html-Demo/Telecom/Assets/img/",
     "roadm_type": [
       "Default"
     ],
