@@ -104,7 +104,7 @@ var displayNodeLabels = false;
 
 $(document).ready(function () {
 
-    $.getJSON("/Data/StyleData.json", function (data) {
+    $.getJSON("./Data/StyleData.json", function (data) {
 
         optionsJSON = data.options;
         roadmJSON = data.Roadm;
@@ -130,7 +130,7 @@ $(document).ready(function () {
         console.log("An error has occurred1.");
     });
 
-    $.getJSON("/Data/ConfigurationData.json", function (data) {
+    $.getJSON("./Data/ConfigurationData.json", function (data) {
 
         configData = data;
         DIR = configData.node.dir;
@@ -142,7 +142,7 @@ $(document).ready(function () {
         console.log("An error has occurred2.");
     });
 
-    $.getJSON("/Data/yang.json", function (data) {
+    $.getJSON("./Data/yang.json", function (data) {
         eqpt_config = data;
         load_EqptConfig();
     }).fail(function () {
