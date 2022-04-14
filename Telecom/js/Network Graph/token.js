@@ -1,75 +1,34 @@
-﻿////$(document).ready(function () {
-////    debugger;
-////    $('#btn_token').click(function () {
-////        debugger;
-////        var requestData = "12345";
-
-////        $.ajax({
-            
-////            type: "POST",
-////            url: "http://localhost:15715/authenticate",
-////            data: JSON.stringify(requestData),
-////            contentType: "application/json; charset=utf-8",
-////            dataType: "json",
-////            success: function (data) {
-////                alert(data);
-////            },
-////            failure: function (errMsg) {
-////                alert(errMsg);
-////            }
-////        });
-
-
-
-////    });
-
-////});
+﻿
 
 $(document).ready(function () {
     $('#btn_token').click(function () {
         debugger;
-       /// var username = "12345";
-        var partner_id = "23";
-       var secret_key = "GCR942608IDFNSV";
-
-        //$.post("https://uatproapi.hiremee.co.in/getskillassessmentlist",
-        //    {
-        //        'partner_id': partner_id,
-        //        'secret_key': secret_key
-        //    },
-        //    function (data, status) {
-        //        alert("Data: " + data + "\nStatus: " + status);
-        //    });
-
-        $.ajax({
+        $.support.cors = true;
+         $.ajax({
            
-            url: "https://itsapi.hiremee.co.in/getskillassessmentlist",
-            type: "POST",
-            ///dataType: 'json',
-            data: JSON.stringify({
-                //'username': username
-                'partner_id': partner_id,
-               'secret_key': secret_key
-                
-            }),
-            async: true,
-           responseType:'application/json',
-           
+            url: "https://gorest.co.in/public/v2/posts",
+            type: "GET",
+            crossDomain: true,
+            
+            cors: true,
+            secure: true,
             headers: {
-                contentType:"application/json",
-                "Access-Control-Allow-Origin": "*",
-                
+                'Access-Control-Allow-Origin': '*',
+                "contentType": "application/json",
             },
-           
-            success: function (response) {
 
-                alert(response);
+            success: function (response) {
+                
+                var data = response[0].title;
+                console.log(data);
+                alert(data);
             },
             error: function (e) {
                 console.log(e);
             },
-            dataType: "jsonp",
-            contentType: "application/json"
+           
+            dataType: "json",
+            contentType: "application/json; charset=utf-8"
         });
 
     });
