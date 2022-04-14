@@ -9,7 +9,7 @@ $(document).ready(function () {
          $.ajax({
            
              url: "https://itsapi.hiremee.co.in/getskillassessmentlist",
-            type: "GET",
+            type: "POST",
             crossDomain: true,
             
             cors: true,
